@@ -1,4 +1,4 @@
-# Candidates 2026 — Reto de HRI/Visión
+# Candidates 2026 - Reto de HRI/Visión
 Implementación del Proyecto
 
 **Realizado por:** Alejandro Martínez Páez
