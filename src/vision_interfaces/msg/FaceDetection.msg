@@ -2,7 +2,7 @@
 # Variables o información que va a utilizarse en la detección
 
 # identificador de una persona (cara) 
-int32 id_track
+int32 track_id
 
 # Reconocimiento de la persona 
 string name

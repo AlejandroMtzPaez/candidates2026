@@ -1,0 +1,5 @@
+string identity
+string question
+---
+string answer
+bool access_granted

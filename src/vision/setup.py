@@ -25,7 +25,12 @@ setup(
     entry_points={
         'console_scripts': [
             'hello_node = vision.hello_node:main',
-            'camera = vision.camera:main'
+            'camera = vision.camera:main',
+            'face_detector = vision.face_detector:main',
+            'identity = vision.identity:main',
+            'ollama = vision.ollama:main',
+            'whisper = vision.whisper:main',
+            'voz = vision.voz:main'
         ],
     },
 )
