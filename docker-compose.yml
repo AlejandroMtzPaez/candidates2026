@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  hri_robot:
+    build: .
+    container_name: candidates_hri
+    privileged: true # Necesario para acceso profundo a hardware
+    network_mode: "host" # Para que ROS 2 y Foxglove se comuniquen sin bloqueos
+    devices:
+      - "/dev/video0:/dev/video0" # Pasa la cámara web
+      - "/dev/snd:/dev/snd"       # Pasa las tarjetas de audio
+    environment:
+      - DISPLAY=$DISPLAY          # Por si necesitas ventanas de OpenCV
+      - PULSE_SERVER=unix:/mnt/wslg/PulseServer # Puente de audio de WSL2
+    volumes:
+      - ./src:/ros2_ws/src        # Sincroniza tu código en tiempo real
+      - /mnt/wslg:/mnt/wslg       # Acceso al socket del micrófono
+    command: /bin/bash

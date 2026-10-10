@@ -5,7 +5,8 @@ package_name = 'vision'
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=find_packages(where='src/vision', exclude=['test']),
+    package_dir={'': 'src/vision'},
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -28,6 +29,9 @@ setup(
             'camera = vision.camera:main',
             'face_detector = vision.face_detector:main',
             'identity = vision.identity:main',
+            'ollama = vision.ollama:main',
+            'whisper_og = vision.whisper_og:main',
+            'voz = vision.voz:main',
         ],
     },
 )

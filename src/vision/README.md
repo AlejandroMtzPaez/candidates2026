@@ -32,6 +32,13 @@ Este proyecto usa ROS 2 Jazzy sobre Ubuntu 24.04 (probado en WSL2).
 - `src/vision_interfaces/` — interfaces propias del proyecto:
   - `msg/FaceDetection.msg` — mensaje con datos de detección (track_id, name, confidence, coordinates).
 
+## Conversación por voz y RAG
+
+`whisper_og` procesa una pregunta a la vez y descarta el audio nuevo mientras Ollama
+genera la respuesta y Piper termina de reproducirla. Después vuelve a escuchar.
+El RAG entrega al modelo los fragmentos más cercanos de la memoria; si no hay
+información suficiente, el modelo debe indicarlo en vez de inventar una respuesta.
+
 ## Probar el avance
 
 ```bash

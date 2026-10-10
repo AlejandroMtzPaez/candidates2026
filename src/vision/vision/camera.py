@@ -4,12 +4,10 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 import cv2
 
-
 class CameraPublisher(Node):
     def __init__(self):
         super().__init__('camera')
         self.publisher_ = self.create_publisher(Image, 'camera/image_raw', 10)
-        #self.bridge = CvBridge()
 
         self.cap = self._open_camera_with_retries(max_attempts=5, delay=1.0)
 
@@ -38,7 +36,6 @@ class CameraPublisher(Node):
 
         self.get_logger().error('No se pudo abrir la cámara después de varios intentos')
         return cv2.VideoCapture(0)  # devuelve algo, aunque esté cerrado, para no romper el resto del código
-    
 
     def timer_callback(self):
         t0 = time.time()
@@ -62,7 +59,7 @@ class CameraPublisher(Node):
         self.publisher_.publish(msg)
         t2 = time.time()
 
-        self.get_logger().info(f'read: {t1-t0:.3f}s | publish: {t2-t1:.3f}s')
+        self.get_logger().debug(f'read: {t1-t0:.3f}s | publish: {t2-t1:.3f}s')
 
     def destroy_node(self):
         self.cap.release()

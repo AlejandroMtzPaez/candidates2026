@@ -58,7 +58,7 @@ class IdentityNode(Node):
         self.known_embedding = None
         self.known_name = "Alejandro"
         self.identity_threshold = 0.40
-        self.enroll_face('/home/usuario/ros2_ws/src/vision/alex.jpeg')
+        self.enroll_face('/ros2_ws/src/vision/vision/fotos_equipo/alex.jpeg')
 
     def enroll_face(self, image_path):
         img = cv2.imread(image_path)

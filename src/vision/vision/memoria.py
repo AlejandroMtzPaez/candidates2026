@@ -3,7 +3,7 @@ import os
 
 def main():
     # Base de datos local
-    db_path = os.path.expanduser('~/ros2_ws/src/vision/vision/chroma_db')
+    db_path = os.path.expanduser('/ros2_ws/src/vision/vision/chroma_db')
     client = chromadb.PersistentClient(path=db_path)
 
     # conocimiento del robot
